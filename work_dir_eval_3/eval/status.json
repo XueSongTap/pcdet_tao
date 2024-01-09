@@ -1,0 +1,7 @@
+{"date": "12/28/2023", "time": "2:29:5", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "12/28/2023", "time": "2:29:9", "status": "FAILURE", "verbosity": "INFO", "message": "name 'key' is not defined"}
+{"date": "12/28/2023", "time": "2:31:5", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "12/28/2023", "time": "2:31:6", "status": "FAILURE", "verbosity": "INFO", "message": "name 'key' is not defined"}
+{"date": "12/28/2023", "time": "2:32:5", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "12/28/2023", "time": "2:34:29", "status": "RUNNING", "verbosity": "INFO", "message": "Evaluation metrics generated.", "kpi": {"recall/roi_0.3": 0.0, "recall/rcnn_0.3": 0.9364961840756351, "recall/roi_0.5": 0.0, "recall/rcnn_0.5": 0.8702585715912974, "recall/roi_0.7": 0.0, "recall/rcnn_0.7": 0.6190340585488097, "bev mAP": 63.2513980858156, "3d mAP": 58.84248414405683}}
+{"date": "12/28/2023", "time": "2:34:29", "status": "SUCCESS", "verbosity": "INFO", "message": "Evaluation finished successfully.", "kpi": {"recall/roi_0.3": 0.0, "recall/rcnn_0.3": 0.9364961840756351, "recall/roi_0.5": 0.0, "recall/rcnn_0.5": 0.8702585715912974, "recall/roi_0.7": 0.0, "recall/rcnn_0.7": 0.6190340585488097, "bev mAP": 63.2513980858156, "3d mAP": 58.84248414405683}}

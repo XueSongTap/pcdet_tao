@@ -1,0 +1,18 @@
+{"date": "12/27/2023", "time": "5:13:58", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "5:13:58", "status": "FAILURE", "verbosity": "INFO", "message": "[Errno 2] No such file or directory: '/data/zhimengf/tao-experiments/data/pointpillars/dbinfos_train.pkl'"}
+{"date": "12/27/2023", "time": "5:15:44", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "5:15:44", "status": "FAILURE", "verbosity": "INFO", "message": "[Errno 2] No such file or directory: '/data/kitti/dbinfos_train.pkl'"}
+{"date": "12/27/2023", "time": "5:46:19", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "5:46:22", "status": "FAILURE", "verbosity": "INFO", "message": "'Namespace' object has no attribute 'key'"}
+{"date": "12/27/2023", "time": "5:51:49", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "5:51:50", "status": "FAILURE", "verbosity": "INFO", "message": "build_model_and_optimizer() missing 1 required positional argument: 'key'"}
+{"date": "12/27/2023", "time": "5:52:15", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "5:52:15", "status": "FAILURE", "verbosity": "INFO", "message": "name 'key' is not defined"}
+{"date": "12/27/2023", "time": "5:53:32", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "5:53:32", "status": "FAILURE", "verbosity": "INFO", "message": "name 'key' is not defined"}
+{"date": "12/27/2023", "time": "6:11:46", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "6:11:47", "status": "FAILURE", "verbosity": "INFO", "message": "'Namespace' object has no attribute 'key'"}
+{"date": "12/27/2023", "time": "6:12:38", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "6:12:39", "status": "FAILURE", "verbosity": "INFO", "message": "train_model() missing 1 required positional argument: 'key'"}
+{"date": "12/27/2023", "time": "7:8:14", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"date": "12/27/2023", "time": "7:9:10", "status": "FAILURE", "verbosity": "INFO", "message": "Training was interrupted"}

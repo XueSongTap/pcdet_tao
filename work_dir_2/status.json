@@ -1,0 +1,3 @@
+{"date": "12/27/2023", "time": "7:25:12", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars training"}
+{"epoch": 0, "time_per_epoch": "0:04:01.343261", "max_epoch": 80, "eta": "5:21:47.460916", "date": "12/27/2023", "time": "7:29:14", "status": "RUNNING", "verbosity": "INFO", "message": "Train metrics generated.", "kpi": {"learning_rate": 0.0003064761771833027, "loss": 1.0110846757888794}}
+{"date": "12/27/2023", "time": "7:29:14", "status": "FAILURE", "verbosity": "INFO", "message": "name 'key' is not defined", "kpi": {"learning_rate": 0.0003064761771833027, "loss": 1.0110846757888794}}

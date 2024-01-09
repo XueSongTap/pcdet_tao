@@ -1,0 +1,7 @@
+2023-12-27 05:52:15,461   INFO  **********************Start logging**********************
+2023-12-27 05:52:15,461   INFO  CUDA_VISIBLE_DEVICES=ALL
+2023-12-27 05:52:15,528   INFO  Database filter by min points Car: 14357 => 13461
+2023-12-27 05:52:15,529   INFO  Database filter by min points Pedestrian: 2207 => 2161
+2023-12-27 05:52:15,529   INFO  Database filter by min points Cyclist: 734 => 700
+2023-12-27 05:52:15,805   INFO  Loading point cloud dataset
+2023-12-27 05:52:15,863   INFO  Total samples for point cloud dataset: 3712
