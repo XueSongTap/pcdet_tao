@@ -35,7 +35,7 @@
     DG = tp.DependencyGraph()
     out = model(torch.randn([1,3, input_size, input_size]).to(device))
     DG.build_dependency(model, example_inputs=torch.randn([1,3, input_size, input_size]))
-    excluded_layers = list(model.model[-1].modules())
+    excluded_layers = list(model.modRel[-1].modules())
     print(excluded_layers)
 
     # 2. get global threshold

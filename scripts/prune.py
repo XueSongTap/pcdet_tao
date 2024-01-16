@@ -16,6 +16,7 @@
 import argparse
 import datetime
 import os
+import sys
 from pathlib import Path
 import tempfile
 import torch
@@ -35,6 +36,7 @@ from tools.train_utils.train_utils import (
     encrypt_pytorch
 )
 
+# sys.path.append('/code2/openpcdet_from_tao/')
 
 def parse_args(args=None):
     """Argument Parser."""
@@ -91,7 +93,8 @@ def prune_model():
     model = model.cuda()
     model = model.eval()
     unpruned_total_params = sum(p.numel() for p in model.parameters())
-    strategy = tp.strategy.L1Strategy()  # or tp.strategy.RandomStrategy()
+    # strategy = tp.strategy.L1Strategy()  # or tp.strategy.RandomStrategy()
+    strategy = tp.strategy.RandomStrategy()
     DG = tp.DependencyGraph()
     DG.build_dependency(model, example_inputs=input_dict)
     # conv layers

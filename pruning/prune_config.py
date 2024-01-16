@@ -26,4 +26,4 @@ class PruneConfig:
     amount: Optional[float] = None
     threshold: Optional[float] = None
     granularity: int = 8
-    raw_prune_score: str = "L1"  # [L1, L2]
+    raw_prune_score: str = "L2"  # [L1, L2]

@@ -1,0 +1,4 @@
+{"date": "1/14/2024", "time": "8:32:41", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "1/14/2024", "time": "8:32:43", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.06848741894331369"}
+{"date": "1/14/2024", "time": "8:32:43", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_l2_0.8/pruned_0.8.pth"}
+{"date": "1/14/2024", "time": "8:32:43", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
