@@ -50,7 +50,14 @@ from nvidia_tao_pytorch.pointcloud.pointpillars.tools.train_utils.train_utils im
     encrypt_onnx
 )
 
-
+"""
+ExportablePFNLayer: 可导出的Pillar Feature Net（PFN）层。
+ExportablePillarVFE: 可导出的Pillar Voxel Feature Encoder（VFE）。
+ExportableScatter: 可导出的散射模块，用于将特征从点云空间映射到鸟瞰图（Bird's Eye View, BEV）空间。
+ExportableBEVBackbone: 可导出的BEV背景提取模块。
+ExportableAnchorHead: 可导出的锚点头部模块，用于生成分类和回归预测。
+ExportablePointPillar: 包装上述模块的整体PointPillar模型。
+"""
 class ExportablePFNLayer(nn.Module):
     """PFN layer replacement that can be exported to ONNX."""
 
@@ -419,6 +426,20 @@ def main():
         )
     if output_file.endswith('.etlt') and args.key:
         os.remove(tmp_onnx_file)
+"""
+main函数执行以下步骤：
+
+检查TensorRT是否可用。
+解析命令行参数和配置文件。
+创建日志记录器。
+设置CUDA设备。
+加载模型并将其替换为可导出的版本。
+创建一个虚拟输入，用于ONNX导出。
+导出模型到ONNX。
+简化ONNX模型以减小尺寸和提高效率。
+如果指定，使用提供的密钥对ONNX模型进行加密并保存为.etlt文件。
+如果指定，将ONNX模型构建为TensorRT引擎并保存。
+"""
 
 
 if __name__ == '__main__':

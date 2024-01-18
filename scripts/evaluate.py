@@ -48,7 +48,7 @@ from pcdet.utils import common_utils
 pyc_dev = pycuda.autoinit.device
 pyc_ctx = pyc_dev.retain_primary_context()
 
-
+# 与推理脚本相比，这个评估脚本主要的不同点在于它的目标是评估模型性能而不是仅仅推理。这意味着它可能会使用评估指标（如精确度、召回率等）来衡量模型的性能，并可能将评估结果保存在不同的格式或数据结构中。此外，代码中移除了密钥参数--key，它在评估脚本中不是必需的。代码中还有关于PyCUDA上下文管理的额外逻辑，其中使用了pycuda.autoinit来启动和管理CUDA设备的主上下文，这有助于在使用TensorRT之前正确地初始化CUDA环境。
 def parse_config():
     """Argument Parser."""
     parser = argparse.ArgumentParser(description='arg parser')

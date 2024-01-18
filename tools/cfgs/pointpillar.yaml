@@ -17,21 +17,6 @@ dataset:
         src_feature_list: ['x', 'y', 'z', 'intensity'],
     }
     point_cloud_range: [0, -39.68, -3, 69.12, 39.68, 1]
-    data_processor:
-        - name: mask_points_and_boxes_outside_range
-          remove_outside_boxes: True
-        - name: shuffle_points
-          shuffle: {
-            'train': True,
-            'test': False
-          }
-        - name: transform_points_to_voxels
-          voxel_size: [0.16, 0.16, 4]
-          max_points_per_voxel: 32
-          max_number_of_voxels: {
-            'train': 16000,
-            'test': 40000
-          }
     data_augmentor:
         disable_aug_list: ['placeholder']
         aug_config_list:
@@ -54,6 +39,22 @@ dataset:
               world_rot_angle: [-0.78539816, 0.78539816]
             - name: random_world_scaling
               world_scale_range: [0.95, 1.05]
+    data_processor:
+        - name: mask_points_and_boxes_outside_range
+          remove_outside_boxes: True
+        - name: shuffle_points
+          shuffle: {
+            'train': True,
+            'test': False
+          }
+        - name: transform_points_to_voxels
+          voxel_size: [0.16, 0.16, 4]
+          max_points_per_voxel: 32
+          max_number_of_voxels: {
+            'train': 16000,
+            'test': 40000
+          }
+
     num_workers: 4
 
 model:

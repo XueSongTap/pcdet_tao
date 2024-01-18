@@ -16,8 +16,12 @@
 import numpy as np
 import onnx
 import onnx_graphsurgeon as gs
+"""
+这段代码提供了一系列用于简化和优化ONNX（Open Neural Network Exchange）模型的函数。特别是，它看起来是为PointPillars模型准备的，这是一个用于3D目标检测的网络。这个脚本使用了onnx_graphsurgeon库，这个库允许用户以非常灵活的方式操作ONNX图，包括添加、删除和修改节点和张量。
+"""
 
 
+"""这是一个为gs.Graph（onnx_graphsurgeon.Graph的实例）注册的方法，用于在图中插入一个名为PillarScatterPlugin的自定义节点（可能是一个特定于NVIDIA实现的节点）。这个方法首先清除输入和输出张量的连接，然后创建一个新节点，并设置其属性。"""
 @gs.Graph.register()
 def replace_with_scatter(self, inputs, outputs):
     """Insert Scatter plugin."""
@@ -38,7 +42,7 @@ def replace_with_scatter(self, inputs, outputs):
         attrs=attrs
     )
 
-
+"""这个函数递归地遍历图中的节点，将所有输出张量的形状的第一维设置为字符串"batch"。这可能是用于为图中的张量指定动态批处理大小。"""
 def recursive_set_shape(node):
     """Recursively set shape."""
     for ot in node.outputs:
@@ -46,7 +50,17 @@ def recursive_set_shape(node):
         for on in ot.outputs:
             recursive_set_shape(on)
 
+"""
+这是主要的函数，它负责接收一个ONNX模型以及一些配置参数，并执行一系列优化步骤。这个函数做了很多事情，包括：
 
+导入ONNX模型为onnx_graphsurgeon图。
+创建和修改图的输入和输出张量。
+使用replace_with_scatter方法插入自定义的PillarScatterPlugin节点。
+清理图，移除悬空的子图，并进行拓扑排序（确保节点的执行顺序正确）。
+添加额外的自定义插件节点，比如VoxelGeneratorPlugin和DecodeBbox3DPlugin，这些可能是特定于NVIDIA实现的。
+使用recursive_set_shape更新节点形状。
+最终，导出简化后的ONNX图。
+"""
 def simplify_onnx(onnx_model, cfg):
     """Simplify ONNX model."""
     graph = gs.import_onnx(onnx_model)
