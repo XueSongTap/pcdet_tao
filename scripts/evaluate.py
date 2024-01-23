@@ -13,6 +13,8 @@
 # limitations under the License.
 
 """Evaluation script for PointPillars."""
+import sys
+sys.path.append("/code2/openpcdet_from_tao/")
 import argparse
 import datetime
 import os
@@ -27,7 +29,7 @@ import pycuda
 import pycuda.autoinit
 try:
     import tensorrt as trt  # pylint: disable=unused-import  # noqa: F401
-    from nvidia_tao_pytorch.pointcloud.pointpillars.tools.export.tensorrt_model import TrtModel
+    from tools.export.tensorrt_model import TrtModel
 except:  # noqa: E722
     import logging
     logger = logging.getLogger(__name__)

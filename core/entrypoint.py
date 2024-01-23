@@ -22,10 +22,10 @@ import shlex
 import sys
 from time import time
 
-import nvidia_tao_pytorch.core.download_specs as download_specs
-from nvidia_tao_pytorch.core.telemetry.nvml_utils import get_device_details
-from nvidia_tao_pytorch.core.telemetry.telemetry import send_telemetry_data
-from nvidia_tao_pytorch.core.tlt_logging import logging
+import core.download_specs as download_specs
+from core.telemetry.nvml_utils import get_device_details
+from core.telemetry.telemetry import send_telemetry_data
+from core.tlt_logging import logging
 
 
 def get_subtasks(package):

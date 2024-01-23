@@ -1,0 +1,4 @@
+{"date": "1/19/2024", "time": "2:6:49", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars inference"}
+{"date": "1/19/2024", "time": "2:6:49", "status": "FAILURE", "verbosity": "INFO", "message": "'Namespace' object has no attribute 'key'"}
+{"date": "1/19/2024", "time": "2:7:39", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars inference"}
+{"date": "1/19/2024", "time": "2:39:27", "status": "SUCCESS", "verbosity": "INFO", "message": "Inference finished successfully."}

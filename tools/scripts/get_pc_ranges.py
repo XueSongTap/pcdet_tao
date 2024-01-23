@@ -16,7 +16,7 @@
 import os
 import sys
 import numpy as np
-from nvidia_tao_pytorch.core.path_utils import expand_path
+from core.path_utils import expand_path
 
 
 def calculate_pc_ranges(pc_path):

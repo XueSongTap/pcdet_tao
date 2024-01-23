@@ -24,7 +24,7 @@ from torch import nn
 
 try:
     import tensorrt as trt  # pylint: disable=unused-import  # noqa: F401
-    from nvidia_tao_pytorch.pointcloud.pointpillars.tools.export.tensorrt_model import TrtModel
+    from tools.export.tensorrt_model import TrtModel
 except:  # noqa: E722
     import logging
     logger = logging.getLogger(__name__)
@@ -32,14 +32,14 @@ except:  # noqa: E722
         "Failed to import TensorRT package, "
         "inference with TensorRT engine will not be available."
     )
-import nvidia_tao_pytorch.core.loggers.api_logging as status_logging
-from nvidia_tao_pytorch.core.path_utils import expand_path
-from nvidia_tao_pytorch.pointcloud.pointpillars.tools.eval_utils import eval_utils
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.config import cfg, cfg_from_yaml_file, log_config_to_file
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.datasets import build_dataloader
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.models import load_checkpoint
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.models.model_utils import model_nms_utils
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.utils import common_utils
+import core.loggers.api_logging as status_logging
+from core.path_utils import expand_path
+from tools.eval_utils import eval_utils
+from pcdet.config import cfg, cfg_from_yaml_file, log_config_to_file
+from pcdet.datasets import build_dataloader
+from pcdet.models import load_checkpoint
+from pcdet.models.model_utils import model_nms_utils
+from pcdet.utils import common_utils
 
 # parse_config函数用于解析命令行参数并从YAML配置文件加载配置到全局配置对象cfg中。
 def parse_config():
@@ -55,7 +55,7 @@ def parse_config():
         default=None,
         help="Path to the TensorRT engine to be used for inference"
     )
-    parser.add_argument("--key", "-k", type=str, required=True, help="Encryption key")
+    # parser.add_argument("--key", "-k", type=str, required=True, help="Encryption key")
     args = parser.parse_args()
     cfg_from_yaml_file(expand_path(args.cfg_file), cfg)
     np.random.seed(1024)
@@ -215,8 +215,8 @@ def main():
         dist=False, workers=args.workers, logger=logger, training=False
     )[1]
     model = load_checkpoint(
-        args.ckpt,
-        args.key
+        args.ckpt
+        # args.key
     )[0]
     # Try to load TRT engine if there is any
     if args.trt_engine is not None:

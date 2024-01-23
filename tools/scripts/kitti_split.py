@@ -15,7 +15,7 @@
 """Split KITTI datset into train/val."""
 import os
 import sys
-from nvidia_tao_pytorch.core.path_utils import expand_path
+from core.path_utils import expand_path
 
 
 def split(list_file, lidar, label, output_lidar, output_label):

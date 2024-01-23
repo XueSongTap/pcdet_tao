@@ -24,8 +24,8 @@ from pytorch_lightning.utilities import rank_zero_info, rank_zero_only, rank_zer
 from pytorch_lightning.utilities.cloud_io import get_filesystem
 from pytorch_lightning.utilities.cloud_io import load as pl_load
 
-from nvidia_tao_pytorch.core.checkpoint_encryption import decrypt_checkpoint, encrypt_checkpoint
-from nvidia_tao_pytorch.core.cookbooks.tlt_pytorch_cookbook import TLTPyTorchCookbook
+from core.checkpoint_encryption import decrypt_checkpoint, encrypt_checkpoint
+from core.cookbooks.tlt_pytorch_cookbook import TLTPyTorchCookbook
 
 
 class TLTCheckpointConnector(CheckpointConnector):

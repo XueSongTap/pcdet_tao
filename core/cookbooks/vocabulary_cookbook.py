@@ -20,7 +20,7 @@ import operator
 from dataclasses import dataclass
 from eff.validator.conditions import Expression
 
-from nvidia_tao_pytorch.core.cookbooks.cookbook import Cookbook
+from core.cookbooks.cookbook import Cookbook
 
 __all__ = ["VocabularyCondition", "VocabularyCookbook"]
 

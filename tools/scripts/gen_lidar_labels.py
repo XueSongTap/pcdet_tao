@@ -19,11 +19,11 @@ import argparse
 import numpy as np
 from tqdm import tqdm
 
-from nvidia_tao_pytorch.core.path_utils import expand_path
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.utils.object3d_kitti import (
+from core.path_utils import expand_path
+from pcdet.utils.object3d_kitti import (
     get_objects_from_label
 )
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.utils.calibration_kitti import (
+from pcdet.utils.calibration_kitti import (
     Calibration
 )
 

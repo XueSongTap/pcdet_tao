@@ -15,7 +15,7 @@
 """Filter labels by LIDAR."""
 import os
 import sys
-from nvidia_tao_pytorch.core.path_utils import expand_path
+from core.path_utils import expand_path
 
 
 def filter_labels(label_dir, lidar_dir, val_label_dir):

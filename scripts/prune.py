@@ -94,7 +94,7 @@ def prune_model():
     model = model.eval()
     unpruned_total_params = sum(p.numel() for p in model.parameters())
     # strategy = tp.strategy.L1Strategy()  # or tp.strategy.RandomStrategy()
-    strategy = tp.strategy.RandomStrategy()
+    strategy = tp.strategy.L1Strategy()
     DG = tp.DependencyGraph()
     DG.build_dependency(model, example_inputs=input_dict)
     # conv layers

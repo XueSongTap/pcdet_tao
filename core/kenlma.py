@@ -23,7 +23,7 @@ pieces in /tmp without reading and rewriting the contents in this process.
 
 """
 import tempfile
-from nvidia_tao_pytorch.core.cookbooks.kenlm_cookbook import KenLMCookbook
+from core.cookbooks.kenlm_cookbook import KenLMCookbook
 from eff.core import Archive
 import shutil
 import os

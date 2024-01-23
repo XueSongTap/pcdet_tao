@@ -27,7 +27,11 @@ TORCH_BATCHNORM = nn.modules.batchnorm._BatchNorm
 TORCH_PRELU = nn.PReLU
 TORCH_LINEAR = nn.Linear
 
+"""
+类和枚举定义：
 
+OPTYPE：一个枚举，列出了不同的操作类型，如卷积（CONV）、批量归一化（BN）、线性层（LINEAR）等。
+"""
 class OPTYPE(IntEnum):
     """OP Type."""
 
@@ -91,7 +95,9 @@ def _get_node_in_channel(node):  # noqa pylint: disable=R0911
         return node.customized_op_fn['get_in_ch_fn'](node.module)  # noqa pylint: disable=R0911
     return None
 
+# 剪枝操作：
 
+# _prune_ 系列函数：这些是实际执行剪枝操作的函数。在这段代码中，它们被定义为虚拟函数，这意味着在实际使用中，需要实现具体的剪枝逻辑。
 # Dummy Pruning fn
 def _prune_concat(layer, *args, **kargs):
     return layer, 0
@@ -139,8 +145,8 @@ class _SplitOp(nn.Module):
 class _ElementWiseOp(nn.Module):
     def __repr__(self):
         return "_ElementWiseOp()"
-
-
+# 索引转换：
+# _FlattenIndexTransform、_ConcatIndexTransform、_SplitIndexTransform：用于在剪枝时，将一个层的剪枝索引转换为适用于另一个层的索引。
 class _FlattenIndexTransform(object):
     def __init__(self, stride=1, reverse=False):
         self._stride = stride
@@ -183,10 +189,9 @@ class _SplitIndexTransform(object):
             new_idxs = [i - self.offset[0] for i in idxs if (self.offset[0] <= i < self.offset[1])]
         return new_idxs
 
-
+# Node：代表模型中的一个节点（例如，网络层或操作）。它包含该节点的输入、输出和依赖关系。
 class Node(object):
     """Node."""
-
     def __init__(self, module, grad_fn, node_name=None):
         """Initialize."""
         self.module = module
@@ -235,7 +240,7 @@ class Node(object):
             fmt += ' ' * 8 + "%s\n" % (dep)
         return fmt
 
-
+# Dependency：表示图中节点之间的依赖关系。它包含触发操作（trigger）、处理函数（handler）和被破坏节点（broken_node）。
 class Dependency(object):
     """Graph Dependency."""
 
@@ -275,7 +280,7 @@ class Dependency(object):
                 self.handler == other.handler and
                 self.broken_node == other.broken_node)
 
-
+# PruningPlan：表示剪枝计划。包含一组剪枝操作，每个操作包括一个依赖和剪枝索引列表。
 class PruningPlan(object):
     """ Pruning plan.
 
@@ -340,7 +345,7 @@ class PruningPlan(object):
         fmt += "-------------\n"
         return fmt
 
-
+# DependencyGraph：表示整个模型的依赖图。它建立模型的剪枝依赖，提供获取剪枝计划的功能。
 class DependencyGraph(object):
     """Dependency Graph."""
 
@@ -363,7 +368,7 @@ class DependencyGraph(object):
             OUTPUT_NODE_RULES[(t1, t2)] = (HANDLER[t1][1], HANDLER[t2][0])  # change in_channels of output layer
             INPUT_NODE_RULES[(t1, t2)] = (HANDLER[t1][0], HANDLER[t2][1])  # change out_channels of input layer
     CUSTOMIZED_OP_FN = {}
-
+    # build_dependency 方法用于遍历模型和输入，构建依赖图。
     def build_dependency(self,
                          model: torch.nn.Module,
                          example_inputs: typing.Union[torch.Tensor, typing.Sequence],

@@ -24,7 +24,7 @@ import os
 
 try:
     import tensorrt as trt  # pylint: disable=unused-import  # noqa: F401
-    from nvidia_tao_pytorch.pointcloud.pointpillars.tools.export.tensorrt import (
+    from tools.export.tensorrt import (
         Calibrator,
         ONNXEngineBuilder
     )
@@ -37,16 +37,16 @@ except:  # noqa: E722
         "will not be available."
     )
     trt_available = False
-import nvidia_tao_pytorch.core.loggers.api_logging as status_logging
-from nvidia_tao_pytorch.core.path_utils import expand_path
-from nvidia_tao_pytorch.pointcloud.pointpillars.tools.export.simplifier_onnx import (
+import core.loggers.api_logging as status_logging
+from core.path_utils import expand_path
+from tools.export.simplifier_onnx import (
     simplify_onnx
 )
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.config import cfg, cfg_from_yaml_file
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.models import load_checkpoint
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.utils import common_utils
+from pcdet.config import cfg, cfg_from_yaml_file
+from pcdet.models import load_checkpoint
+from pcdet.utils import common_utils
 
-from nvidia_tao_pytorch.pointcloud.pointpillars.tools.train_utils.train_utils import (
+from tools.train_utils.train_utils import (
     encrypt_onnx
 )
 
@@ -285,7 +285,7 @@ def parse_config():
         required=False,
         help="Workspace size in MB for TensorRT, default is 1024MB(1GB)."
     )
-    parser.add_argument("--key", "-k", type=str, required=True, help="Encryption key")
+    # parser.add_argument("--key", "-k", type=str, required=True, help="Encryption key")
     args = parser.parse_args()
     cfg_from_yaml_file(expand_path(args.cfg_file), cfg)
     return args, cfg
@@ -329,7 +329,8 @@ def main():
     status_logging.set_status_logger(status_logging.StatusLogger(filename=status_file, append=True))
     status_logging.get_status_logger().write(status_level=status_logging.Status.STARTED, message="Starting PointPillars export")
     # Load model
-    loaded_model = load_checkpoint(cfg.export.checkpoint, args.key)[0]
+    # loaded_model = load_checkpoint(cfg.export.checkpoint, args.key)[0]
+    loaded_model = load_checkpoint(cfg.export.checkpoint)[0]
     model = ExportablePointPillar(loaded_model)
     model.cuda()
     model.eval()

@@ -13,13 +13,13 @@
 # limitations under the License.
 
 """Dataset convert tool for KITTI dataset."""
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.datasets.kitti.kitti_dataset import create_kitti_infos
+from pcdet.datasets.kitti.kitti_dataset import create_kitti_infos
 
 import argparse
 from easydict import EasyDict
 from pathlib import Path
 import yaml
-from nvidia_tao_pytorch.core.path_utils import expand_path
+from core.path_utils import expand_path
 
 
 def parse_args(args=None):

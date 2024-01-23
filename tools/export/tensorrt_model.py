@@ -27,7 +27,7 @@ import pycuda.autoinit  # noqa pylint: disable=W0611
 import pycuda.driver as cuda
 import tensorrt as trt
 
-from nvidia_tao_pytorch.pointcloud.pointpillars.tools.export.tensorrt import (
+from tools.export.tensorrt import (
     _create_tensorrt_logger
 )
 
@@ -49,7 +49,7 @@ class CacheCalibrator(trt.IInt8EntropyCalibrator2):
     This inherits from ``trt.IInt8EntropyCalibrator2`` to implement
     the calibration interface that TensorRT needs to calibrate the
     INT8 quantization factors.
-
+    CacheCalibrator类：这是一个用于TensorRT INT8校准的校准器类。它从磁盘上的缓存文件中加载校准数据。这个类的方法包括读取和写入校准缓存（尽管写入方法在这种情况下什么也不做，因为它假定已有缓存文件）。
     Args:
         calibration_filename (str): name of calibration to read/write to.
     """
@@ -94,6 +94,8 @@ class Engine(object):
 
     This class provides utility functions for performing inference on
     a TensorRT engine.
+    Engine类：这个类代表一个TensorRT引擎，提供了在TensorRT引擎上执行推理的实用函数。它包括创建上下文（_create_context），执行推理（_do_infer），释放上下文和内存（_release_context），以及执行单次推理（infer）和迭代推理（infer_iterator）的方法。
+
 
     Args:
         engine: the CUDA engine to wrap.
@@ -281,6 +283,9 @@ class TrtModel(object):
     The TensorRT model builder builds a TensorRT engine from the engine file from the
     tlt-converter and do inference in TensorRT. We use this as a way to verify the
     TensorRT inference functionality of the FasterRCNN model.
+    TrtModel类：这个类用于构建或加载一个TensorRT引擎。它允许用户从指定的TensorRT引擎文件加载引擎，并执行推理。这个类的方法包括：
+
+
     """
 
     def __init__(self,

@@ -20,8 +20,8 @@ import numpy as np
 from skimage import io
 from tqdm import tqdm
 
-from nvidia_tao_pytorch.core.path_utils import expand_path
-from nvidia_tao_pytorch.pointcloud.pointpillars.pcdet.utils.calibration_kitti import (
+from core.path_utils import expand_path
+from pcdet.utils.calibration_kitti import (
     Calibration
 )
 

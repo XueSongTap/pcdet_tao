@@ -1,0 +1,5 @@
+2024-01-18 12:29:46,189   INFO  Database filter by min points Car: 14357 => 13461
+2024-01-18 12:29:46,190   INFO  Database filter by min points Pedestrian: 2207 => 2161
+2024-01-18 12:29:46,190   INFO  Database filter by min points Cyclist: 734 => 700
+2024-01-18 12:29:46,471   INFO  Loading point cloud dataset
+2024-01-18 12:29:46,526   INFO  Total samples for point cloud dataset: 3712

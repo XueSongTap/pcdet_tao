@@ -27,7 +27,11 @@ import traceback
 
 import numpy as np
 
-from nvidia_tao_pytorch.pointcloud.pointpillars.tools.export.decorators import override, subclass
+from tools.export.decorators import override, subclass
+
+
+# 这段Python代码是TensorRT库的扩展，用于从ONNX文件创建TensorRT引擎，并为PointPillars模型执行INT8校准。这是一个相对复杂的代码片段，包含多个类和函数。下面是代码的关键部分和功能说明：
+
 
 
 """Logger for data export APIs."""
@@ -42,7 +46,7 @@ except ImportError:
         "Failed to import TRT and/or CUDA. TensorRT optimization "
         "and inference will not be available."
     )
-
+# 定义一些默认参数，例如最大工作空间大小和最大批量大小。
 DEFAULT_MAX_WORKSPACE_SIZE = 1 << 30
 DEFAULT_MAX_BATCH_SIZE = 100
 DEFAULT_MIN_BATCH_SIZE = 1
@@ -80,6 +84,9 @@ else:
 
     class Calibrator(trt.IInt8EntropyCalibrator2):
         """Calibrator class.
+
+        实现了trt.IInt8EntropyCalibrator2接口，用于INT8校准过程。
+        get_batch函数用于从数据集中获取一批数据（lidar文件），并将其格式化以供TensorRT使用。
 
         This inherits from ``trt.IInt8EntropyCalibrator2`` to implement
         the calibration interface that TensorRT needs to calibrate the
@@ -193,6 +200,9 @@ else:
 
     def _set_excluded_layer_precision(network, fp32_layer_names, fp16_layer_names):
         """When generating an INT8 model, it sets excluded layers' precision as fp32 or fp16.
+        
+        用于在创建INT8模型时设置某些层为FP32或FP16精度，而不是默认的INT8，以改善模型的准确性或兼容性。
+
 
         In detail, this function is only used when generating INT8 TensorRT models. It accepts
         two lists of layer names: (1). for the layers in fp32_layer_names, their precision will
@@ -225,7 +235,13 @@ else:
                     layer.set_output_type(0, trt.int8)
 
         return is_mixed_precision, use_fp16_mode
-
+    """
+    EngineBuilder类和ONNXEngineBuilder子类
+        这些类是用于创建TensorRT引擎的构建器。
+        构建器可以加载ONNX文件，并根据指定的参数，如最大批量大小、工作空间大小、数据类型等，创建一个TensorRT引擎。
+        对于INT8推理，可以设置校准器或直接提供张量量化因子（tensor_scale_dict）。
+        子类ONNXEngineBuilder特别用于从ONNX文件创建TensorRT引擎，并支持动态批量推理。
+    """
     class EngineBuilder(object):
         """Create a TensorRT engine.
 

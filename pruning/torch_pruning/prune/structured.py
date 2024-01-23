@@ -21,7 +21,8 @@ from operator import mul
 from abc import ABC, abstractstaticmethod
 from typing import Sequence, Tuple
 
-
+# BasePruningFunction 类是一个抽象基类，并且定义了剪枝函数应该实现的通用方法框架。
+# 具体来说，它提供了一个类方法 apply，该方法在剪枝过程中被调用，以及两个抽象静态方法 prune_params 和 calc_nparams_to_prune，子类必须实现这些方法以定义如何剪枝参数和计算要剪枝的参数数量。
 class BasePruningFunction(ABC):
     """Base pruning function
     """
@@ -54,7 +55,7 @@ class BasePruningFunction(ABC):
         """Compute number of parameters to prune."""
         pass
 
-
+# ConvPruning 类继承自 BasePruningFunction，用于剪枝卷积层。它重写了 prune_params 和 calc_nparams_to_prune 方法以剪掉特定索引的输出通道。
 class ConvPruning(BasePruningFunction):
     """Conv Pruning."""
 
@@ -77,7 +78,7 @@ class ConvPruning(BasePruningFunction):
         nparams_to_prune = len(idxs) * reduce(mul, layer.weight.shape[1:]) + (len(idxs) if layer.bias is not None else 0)
         return nparams_to_prune
 
-
+# GroupConvPruning 类针对分组卷积层，它也重写了 check 方法以确保只支持组数等于输入和输出通道数的层。
 class GroupConvPruning(ConvPruning):
     """Group Conv pruning."""
 
@@ -99,7 +100,7 @@ class GroupConvPruning(ConvPruning):
             layer.bias = torch.nn.Parameter(layer.bias.data.clone()[keep_idxs])
         return layer
 
-
+# RelatedConvPruning 类用于剪枝与已有剪枝层相关联的卷积层（例如输入通道）。
 class RelatedConvPruning(BasePruningFunction):
     """Related Conv Pruning."""
 
@@ -121,7 +122,7 @@ class RelatedConvPruning(BasePruningFunction):
         nparams_to_prune = len(idxs) * layer.weight.shape[0] * reduce(mul, layer.weight.shape[2:])
         return nparams_to_prune
 
-
+# LinearPruning 和 RelatedLinearPruning 类似于前面的卷积剪枝类，但它们用于剪枝线性层（全连接层）。
 class LinearPruning(BasePruningFunction):
     """Linear Pruning."""
 
@@ -159,7 +160,7 @@ class RelatedLinearPruning(BasePruningFunction):
         nparams_to_prune = len(idxs) * layer.weight.shape[0]
         return nparams_to_prune
 
-
+#BatchnormPruning 类用于剪枝批量归一化层。
 class BatchnormPruning(BasePruningFunction):
     """BatchNorm Pruning."""
 
@@ -181,7 +182,7 @@ class BatchnormPruning(BasePruningFunction):
         nparams_to_prune = len(idxs) * (2 if layer.affine else 1)
         return nparams_to_prune
 
-
+# PReLUPruning 类用于剪枝参数化ReLU（PReLU）层。
 class PReLUPruning(BasePruningFunction):
     """PReLU pruning."""
 
