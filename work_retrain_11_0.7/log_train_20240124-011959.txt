@@ -1,0 +1,10 @@
+2024-01-24 01:19:59,527   INFO  **********************Start logging**********************
+2024-01-24 01:19:59,527   INFO  CUDA_VISIBLE_DEVICES=ALL
+2024-01-24 01:19:59,590   INFO  Database filter by min points Car: 14357 => 13461
+2024-01-24 01:19:59,591   INFO  Database filter by min points Pedestrian: 2207 => 2161
+2024-01-24 01:19:59,591   INFO  Database filter by min points Cyclist: 734 => 700
+2024-01-24 01:19:59,862   INFO  Loading point cloud dataset
+2024-01-24 01:19:59,918   INFO  Total samples for point cloud dataset: 3712
+2024-01-24 01:20:00,062   INFO  Pruned model loaded from: /code2/openpcdet_from_tao/work_prune_11_0.7/pruned_0.7.pth
+2024-01-24 01:20:00,064   INFO  **********************Start training**********************
+2024-01-24 05:58:07,106   INFO  **********************End training**********************
