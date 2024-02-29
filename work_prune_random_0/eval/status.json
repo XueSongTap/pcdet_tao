@@ -1,0 +1,6 @@
+{"date": "2/29/2024", "time": "7:25:10", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "2/29/2024", "time": "7:26:44", "status": "FAILURE", "verbosity": "INFO", "message": "cuMemAlloc failed: invalid argument"}
+{"date": "2/29/2024", "time": "7:28:21", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "2/29/2024", "time": "7:29:24", "status": "FAILURE", "verbosity": "INFO", "message": "cuMemAlloc failed: invalid argument"}
+{"date": "2/29/2024", "time": "7:35:2", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "2/29/2024", "time": "7:36:17", "status": "FAILURE", "verbosity": "INFO", "message": "cuMemAlloc failed: invalid argument"}

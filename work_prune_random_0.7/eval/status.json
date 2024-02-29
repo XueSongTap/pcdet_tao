@@ -1,0 +1,4 @@
+{"date": "2/28/2024", "time": "16:35:31", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "2/28/2024", "time": "16:36:41", "status": "FAILURE", "verbosity": "INFO", "message": "cuMemAlloc failed: invalid argument"}
+{"date": "2/28/2024", "time": "16:39:47", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "2/28/2024", "time": "16:40:45", "status": "FAILURE", "verbosity": "INFO", "message": "cuMemAlloc failed: invalid argument"}

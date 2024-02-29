@@ -1,0 +1,14 @@
+2024-02-28 16:23:39,767   INFO  **********************Start logging**********************
+2024-02-28 16:23:39,767   INFO  CUDA_VISIBLE_DEVICES=ALL
+2024-02-28 16:23:40,057   INFO  Loading point cloud dataset
+2024-02-28 16:23:40,115   INFO  Total samples for point cloud dataset: 3769
+2024-02-28 16:23:40,227   INFO  *************** EPOCH 0 EVALUATION *****************
+2024-02-28 16:24:43,422   INFO  *************** Performance of EPOCH 0 *****************
+2024-02-28 16:24:43,422   INFO  Generate label finished(sec_per_example: 0.0168 second).
+2024-02-28 16:24:43,422   INFO  recall_roi_0.3: 0.000000
+2024-02-28 16:24:43,423   INFO  recall_rcnn_0.3: 0.000000
+2024-02-28 16:24:43,423   INFO  recall_roi_0.5: 0.000000
+2024-02-28 16:24:43,423   INFO  recall_rcnn_0.5: 0.000000
+2024-02-28 16:24:43,423   INFO  recall_roi_0.7: 0.000000
+2024-02-28 16:24:43,423   INFO  recall_rcnn_0.7: 0.000000
+2024-02-28 16:24:43,424   INFO  Average predicted number of objects(3769 samples): 0.000

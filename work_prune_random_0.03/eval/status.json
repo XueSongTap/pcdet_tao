@@ -1,0 +1,5 @@
+{"date": "2/28/2024", "time": "16:4:34", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "2/28/2024", "time": "16:7:9", "status": "RUNNING", "verbosity": "INFO", "message": "Evaluation metrics generated.", "kpi": {"recall/roi_0.3": 0.0, "recall/rcnn_0.3": 0.9110377036108896, "recall/roi_0.5": 0.0, "recall/rcnn_0.5": 0.8263469643467365, "recall/roi_0.7": 0.0, "recall/rcnn_0.7": 0.495899305160041, "bev mAP": 61.2643260057078, "3d mAP": 54.647488781053035}}
+{"date": "2/28/2024", "time": "16:7:9", "status": "SUCCESS", "verbosity": "INFO", "message": "Evaluation finished successfully.", "kpi": {"recall/roi_0.3": 0.0, "recall/rcnn_0.3": 0.9110377036108896, "recall/roi_0.5": 0.0, "recall/rcnn_0.5": 0.8263469643467365, "recall/roi_0.7": 0.0, "recall/rcnn_0.7": 0.495899305160041, "bev mAP": 61.2643260057078, "3d mAP": 54.647488781053035}}
+{"date": "2/28/2024", "time": "16:32:9", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "2/28/2024", "time": "16:33:17", "status": "FAILURE", "verbosity": "INFO", "message": "cuMemAlloc failed: invalid argument"}
