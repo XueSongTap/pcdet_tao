@@ -7,3 +7,4 @@
 2024-01-23 01:42:21,116   INFO  Total samples for point cloud dataset: 3712
 2024-01-23 01:42:21,275   INFO  Pruned model loaded from: /code2/openpcdet_from_tao/work_prune_11_0.3/pruned_0.3.pth
 2024-01-23 01:42:21,277   INFO  **********************Start training**********************
+2024-01-23 06:48:35,311   INFO  **********************End training**********************
