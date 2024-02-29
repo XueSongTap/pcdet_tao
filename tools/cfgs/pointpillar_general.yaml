@@ -156,8 +156,8 @@ train:
     warmup_epoch: 1
     grad_norm_clip: 10
     resume_training_checkpoint_path: null #"/data/zhimengf/pointpillar_workspace/21/ckpt/checkpoint_epoch_80.pth"
-    # pruned_model_path: null #"/data/zhimengf/pointpillar_workspace/33/pruned_0.5.tlt"
-    pruned_model_path: "/code2/openpcdet_from_tao/work_prune_11_0.3/pruned_0.3.pth"
+    # pruned_model_path: null #"/data/zhimengf/pointpillar_workspace/33/pruned_0.5.tlt" 
+    pruned_model_path: "/code2/openpcdet_from_tao/work_prune_11_0.09/pruned_0.09.pth"
     tcp_port: 18888
     random_seed: null
     checkpoint_interval: 1
@@ -166,7 +166,7 @@ train:
 
 evaluate:
     batch_size: 1
-    checkpoint: "/code2/openpcdet_from_tao/work_retrain_random_0.07/checkpoint_epoch_80.pth"
+    checkpoint: "/code2/openpcdet_from_tao/work_retrain_random_0.01/checkpoint_epoch_80.pth"
 
 inference:
     max_points_num: 25000
