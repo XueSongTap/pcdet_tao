@@ -179,6 +179,9 @@ class TrtModelWrapper():
             trt_output["output_boxes"],
             trt_output["num_boxes"],
         )
+def count_parameters(model):
+    """计算模型的总参数量"""
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
 def main():
@@ -220,6 +223,9 @@ def main():
     )
     model = checkpoint_loaded[0]
     epoch_num = checkpoint_loaded[2]
+    total_params = count_parameters(model)
+    
+    logger.info(f'===========================Total trainable parameters: {total_params}')
     # Try to load TRT engine if there is any
     if args.trt_engine is not None:
         trt_model = TrtModel(
