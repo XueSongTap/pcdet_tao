@@ -70,8 +70,9 @@ def infer_single_ckpt(
         result_dir=infer_output_dir, save_to_file=args.save_to_file
     )
     end_time = time.time()  # 结束计时
+    max_memory = torch.cuda.max_memory_allocated() / (1024 ** 2)  # 将字节转换为MB
     logger.info(f"Inference time: {end_time - start_time} seconds")  # 输出推理耗时
-    
+    logger.info(f"Peak GPU memory usage: {max_memory} MB")
 
 # infer_single_ckpt_trt函数用于使用TensorRT引擎进行一次推理。
 def infer_single_ckpt_trt(
