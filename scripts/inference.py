@@ -1,23 +1,10 @@
-# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 """Inference script for PointPillars."""
 import argparse
 import datetime
 import os
 from pathlib import Path
-
+import time
 import numpy as np
 import torch
 from torch import nn
@@ -74,12 +61,17 @@ def infer_single_ckpt(
     infer_output_dir, logger,
     cfg
 ):
+    start_time = time.time()  # 开始计时
+
     """Do inference with PyTorch model."""
     model.cuda()
     eval_utils.infer_one_epoch(
         cfg, model, test_loader, logger,
         result_dir=infer_output_dir, save_to_file=args.save_to_file
     )
+    end_time = time.time()  # 结束计时
+    logger.info(f"Inference time: {end_time - start_time} seconds")  # 输出推理耗时
+    
 
 # infer_single_ckpt_trt函数用于使用TensorRT引擎进行一次推理。
 def infer_single_ckpt_trt(
