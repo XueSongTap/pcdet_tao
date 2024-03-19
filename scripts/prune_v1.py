@@ -22,7 +22,7 @@ import tempfile
 import torch
 import core.loggers.api_logging as status_logging
 from core.path_utils import expand_path
-import pruning.torch_pruning_v0 as tp
+import pruning.torch_pruning_v1 as tp
 from pcdet.config import (
     cfg, cfg_from_yaml_file
 )
@@ -36,6 +36,7 @@ from tools.train_utils.train_utils import (
     encrypt_pytorch
 )
 import inspect
+
 # sys.path.append('/code2/openpcdet_from_tao/')
 
 def parse_args(args=None):
@@ -49,6 +50,17 @@ def parse_args(args=None):
     args = parser.parse_args()
     cfg_from_yaml_file(expand_path(args.cfg_file), cfg)
     return args, cfg
+# def custom_forward_fn(model, example_inputs):
+#     # 假设example_inputs已经是正确格式的字典
+#     # 直接将其传递给模型的forward方法
+#     output_dict = model(**example_inputs)
+    
+#     # 如果需要，可以从output_dict中提取必要的信息进行后续处理
+#     # 例如，如果后续步骤只需要'points'数据：
+#     points_output = output_dict['points']
+    
+#     # 根据需要返回整个字典或其特定部分
+#     return output_dict  # 或 return points_output
 
 
 def prune_model():
@@ -90,32 +102,36 @@ def prune_model():
     if not os.path.exists(expand_path(cfg.prune.model)):
         raise OSError(f"Model not found: {cfg.prune.model}")
     model = load_checkpoint(cfg.prune.model)[0]
+    print("model:", model)
     model = model.cuda()
-    model = model.eval()
+    # model = model.eval()
     unpruned_total_params = sum(p.numel() for p in model.parameters())
     # strategy = tp.strategy.L1Strategy()  # or tp.strategy.RandomStrategy()
-    strategy = tp.strategy.L1Strategy()
+    # strategy = tp.strategy.L2Strategy()
+    importance_strategy = tp.importance.GroupNormImportance(p=2, group_reduction="mean")
     DG = tp.DependencyGraph()
+    # print("example_inputs:", input_dict)
+    input_dict = {'batch_dict': input_dict}
+
     print(input_dict.keys())
     print("inspect.signature(model.forward):", inspect.signature(model.forward))
     DG.build_dependency(model, example_inputs=input_dict)
+
+    # DG.build_dependency(model, example_inputs=input_dict, forward_fn=custom_forward_fn)
     # conv layers
     layers = [module for module in model.modules() if isinstance(module, torch.nn.Conv2d)]
     # Exclude heads
     black_list = layers[-3:]
     count = 0
     for layer in layers:
-        if layer in black_list:
-            continue
-        # can run some algo here to generate threshold for every node
+        group = DG.get_pruning_group(layer)
+        imp_score = importance_strategy(group)
+        # 基于重要性评分和剪枝阈值来选择剪枝的索引
         threshold_run = threshold
-        pruning_idxs = strategy(layer.weight, amount=threshold_run)
+        pruning_idxs = imp_score < threshold_run
         pruning_plan = DG.get_pruning_plan(layer, tp.prune_conv, idxs=pruning_idxs)
         if pruning_plan is not None:
             pruning_plan.exec()
-        else:
-            continue
-        count += 1
     pruned_total_params = sum(p.numel() for p in model.parameters())
     print("Pruning ratio: {}".format(
         pruned_total_params / unpruned_total_params)
