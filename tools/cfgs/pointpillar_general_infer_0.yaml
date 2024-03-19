@@ -167,13 +167,13 @@ train:
 inference:
     max_points_num: 25000
     batch_size: 1
-    checkpoint: "/code2/openpcdet_from_tao/work_prune_11_0.3/pruned_0.3.pth"
+    checkpoint: "/code2/openpcdet_from_tao/work_dir_3/checkpoint_epoch_80.pth"
     viz_conf_thresh: 0.1
 
 export:
   gpu_id: 0
-  checkpoint: "/code2/openpcdet_from_tao/work_retrain_l2_0.9/checkpoint_epoch_80.pth"
-  onnx_file: "/code2/openpcdet_from_tao/work_retrain_l2_0.9/checkpoint_epoch_80.pth.onnx"
+  checkpoint: "/code2/openpcdet_from_tao/work_retrain_random_0.07/checkpoint_epoch_80.pth"
+  onnx_file: "/code2/openpcdet_from_tao/work_retrain_random_0.07/checkpoint_epoch_80.pth.onnx"
 
 prune:
   model: "/code2/openpcdet_from_tao/work_dir_3/checkpoint_epoch_80.pth"

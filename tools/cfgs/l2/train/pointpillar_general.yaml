@@ -157,23 +157,21 @@ train:
     grad_norm_clip: 10
     resume_training_checkpoint_path: null #"/data/zhimengf/pointpillar_workspace/21/ckpt/checkpoint_epoch_80.pth"
     # pruned_model_path: null #"/data/zhimengf/pointpillar_workspace/33/pruned_0.5.tlt" 
-    pruned_model_path: "/code2/openpcdet_from_tao/work_prune_random_0.1/pruned_0.1.pth"
+    pruned_model_path: "/code2/openpcdet_from_tao/work_prune_l2_0.07/pruned_0.07.pth"
     tcp_port: 18888
     random_seed: null
     checkpoint_interval: 1
     max_checkpoint_save_num: 30
     merge_all_iters_to_one_epoch: False
 
-inference:
-    max_points_num: 25000
+evaluate:
     batch_size: 1
-    checkpoint: "/code2/openpcdet_from_tao/work_prune_11_0.3/pruned_0.3.pth"
-    viz_conf_thresh: 0.1
+    checkpoint: "/code2/openpcdet_from_tao/work_retrain_random_0.9/checkpoint_epoch_80.pth"
 
 export:
   gpu_id: 0
-  checkpoint: "/code2/openpcdet_from_tao/work_retrain_l2_0.9/checkpoint_epoch_80.pth"
-  onnx_file: "/code2/openpcdet_from_tao/work_retrain_l2_0.9/checkpoint_epoch_80.pth.onnx"
+  checkpoint: "/code2/openpcdet_from_tao/work_retrain_random_0.07/checkpoint_epoch_80.pth"
+  onnx_file: "/code2/openpcdet_from_tao/work_retrain_random_0.07/checkpoint_epoch_80.pth.onnx"
 
 prune:
   model: "/code2/openpcdet_from_tao/work_dir_3/checkpoint_epoch_80.pth"
