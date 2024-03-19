@@ -80,3 +80,6 @@
 {"epoch": 78, "time_per_epoch": "0:03:54.704754", "max_epoch": 80, "eta": "0:07:49.409509", "date": "12/27/2023", "time": "12:40:31", "status": "RUNNING", "verbosity": "INFO", "message": "Train metrics generated.", "kpi": {"learning_rate": 3.2536864352763474e-06, "loss": 0.28263410925865173}}
 {"epoch": 79, "time_per_epoch": "0:03:54.120142", "max_epoch": 80, "eta": "0:03:54.120142", "date": "12/27/2023", "time": "12:44:25", "status": "RUNNING", "verbosity": "INFO", "message": "Train metrics generated.", "kpi": {"learning_rate": 3.001139423435474e-08, "loss": 0.3299095034599304}}
 {"date": "12/27/2023", "time": "12:44:26", "status": "SUCCESS", "verbosity": "INFO", "message": "Training finished successfully.", "kpi": {"learning_rate": 3.001139423435474e-08, "loss": 0.3299095034599304}}
+{"date": "3/8/2024", "time": "5:27:3", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars export"}
+{"date": "3/8/2024", "time": "5:27:8", "status": "RUNNING", "verbosity": "INFO", "message": "Model exported to /code2/openpcdet_from_tao/work_dir_3/checkpoint_epoch_80.pth.onnx"}
+{"date": "3/8/2024", "time": "5:27:8", "status": "SUCCESS", "verbosity": "INFO", "message": "Export finished successfully."}
