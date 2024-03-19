@@ -22,10 +22,10 @@ __pycache__
 *.eonnx
 *.ejrvs
 *.riva
-*.onnx
+# *.onnx
 .hydra
 lightning_logs/
-
+*.png
 # Compiled / optimized files
 *.py[cod]
 *.o
