@@ -15,6 +15,10 @@ __pycache__
 *.log
 *.tlt
 *.pth
+
+# 但是排除 prune_*.pth 和 checkpoint_epoch_80.pth
+!prune_*.pth
+!checkpoint_epoch_80.pth
 *.eonnx
 *.ejrvs
 *.riva
