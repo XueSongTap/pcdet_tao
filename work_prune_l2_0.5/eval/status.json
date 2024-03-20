@@ -1,0 +1,2 @@
+{"date": "3/7/2024", "time": "13:13:54", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/7/2024", "time": "13:14:52", "status": "FAILURE", "verbosity": "INFO", "message": "cuMemAlloc failed: invalid argument"}

@@ -1,0 +1,10 @@
+{"date": "3/16/2024", "time": "5:18:50", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:18:51", "status": "FAILURE", "verbosity": "INFO", "message": "module 'pruning.torch_pruning_v0' has no attribute 'GroupNormImportance'"}
+{"date": "3/16/2024", "time": "5:19:10", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:19:12", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8286655244133887"}
+{"date": "3/16/2024", "time": "5:19:12", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_test/pruned_0.1.pth"}
+{"date": "3/16/2024", "time": "5:19:12", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/16/2024", "time": "6:0:46", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "6:0:48", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8286655244133887"}
+{"date": "3/16/2024", "time": "6:0:48", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_test/pruned_0.1.pth"}
+{"date": "3/16/2024", "time": "6:0:48", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}

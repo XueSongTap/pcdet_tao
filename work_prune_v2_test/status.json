@@ -1,0 +1,42 @@
+{"date": "3/17/2024", "time": "7:40:53", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "7:40:55", "status": "FAILURE", "verbosity": "INFO", "message": "name 'nn' is not defined"}
+{"date": "3/17/2024", "time": "7:41:53", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "7:41:55", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8280028410172066"}
+{"date": "3/17/2024", "time": "7:41:55", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "7:41:55", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "7:52:41", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "7:52:43", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8280028410172066"}
+{"date": "3/17/2024", "time": "7:52:43", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "7:52:43", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "8:15:53", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "8:15:56", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8286655244133887"}
+{"date": "3/17/2024", "time": "8:15:56", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "8:15:56", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "14:5:16", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:5:18", "status": "FAILURE", "verbosity": "INFO", "message": "'str' object is not callable"}
+{"date": "3/17/2024", "time": "14:6:44", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:6:46", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8276046932214355"}
+{"date": "3/17/2024", "time": "14:6:46", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "14:6:46", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "14:14:54", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:14:56", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8276046932214355"}
+{"date": "3/17/2024", "time": "14:14:56", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "14:14:56", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "14:15:3", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:15:5", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8276046932214355"}
+{"date": "3/17/2024", "time": "14:15:5", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "14:15:5", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "14:22:36", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:22:37", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8276046932214355"}
+{"date": "3/17/2024", "time": "14:22:37", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "14:22:37", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "14:23:12", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:23:13", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8286655244133887"}
+{"date": "3/17/2024", "time": "14:23:13", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "14:23:13", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}
+{"date": "3/17/2024", "time": "14:30:50", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:30:52", "status": "FAILURE", "verbosity": "INFO", "message": "'PointPillar' object has no attribute 'weight'"}
+{"date": "3/17/2024", "time": "14:31:34", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/17/2024", "time": "14:31:35", "status": "RUNNING", "verbosity": "INFO", "message": "Pruning ratio: 0.8280028410172066"}
+{"date": "3/17/2024", "time": "14:31:36", "status": "RUNNING", "verbosity": "INFO", "message": "Pruned model saved to /code2/openpcdet_from_tao/work_prune_v2_test/pruned_0.1.pth"}
+{"date": "3/17/2024", "time": "14:31:36", "status": "SUCCESS", "verbosity": "INFO", "message": "Pruning finished successfully."}

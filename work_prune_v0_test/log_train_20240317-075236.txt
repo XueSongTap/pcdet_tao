@@ -1,0 +1,3 @@
+2024-03-17 07:52:36,668   INFO  Database filter by min points Car: 14357 => 13461
+2024-03-17 07:52:36,669   INFO  Database filter by min points Pedestrian: 2207 => 2161
+2024-03-17 07:52:36,669   INFO  Database filter by min points Cyclist: 734 => 700

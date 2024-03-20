@@ -1,0 +1,54 @@
+{"date": "3/14/2024", "time": "14:37:14", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/14/2024", "time": "14:37:15", "status": "FAILURE", "verbosity": "INFO", "message": "module 'pruning.torch_pruning_v1' has no attribute 'GroupNormImportance'"}
+{"date": "3/14/2024", "time": "14:42:49", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/14/2024", "time": "14:42:50", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/14/2024", "time": "14:54:6", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/14/2024", "time": "14:54:7", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/15/2024", "time": "3:36:37", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/15/2024", "time": "3:36:38", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "3:55:47", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "3:55:49", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "3:57:53", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "3:57:54", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "3:58:52", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "3:58:53", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "3:59:47", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "3:59:48", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "4:39:24", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "4:39:25", "status": "FAILURE", "verbosity": "INFO", "message": "forward() takes 2 positional arguments but 3 were given"}
+{"date": "3/16/2024", "time": "4:42:10", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "4:42:11", "status": "FAILURE", "verbosity": "INFO", "message": "too many indices for tensor of dimension 2"}
+{"date": "3/16/2024", "time": "4:44:41", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "4:44:42", "status": "FAILURE", "verbosity": "INFO", "message": "'int' object is not iterable"}
+{"date": "3/16/2024", "time": "4:47:55", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "4:47:56", "status": "FAILURE", "verbosity": "INFO", "message": "'int' object is not iterable"}
+{"date": "3/16/2024", "time": "4:49:50", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "4:49:51", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:10:20", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:10:21", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:17:44", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:17:45", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:23:23", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:23:24", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:27:0", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:27:0", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:28:19", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:28:20", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:47:6", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:47:7", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:47:25", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:47:26", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:50:3", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:50:3", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:51:9", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:51:10", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:58:55", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:58:56", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "5:59:28", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "5:59:29", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "6:0:40", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "6:0:41", "status": "FAILURE", "verbosity": "INFO", "message": "forward() got an unexpected keyword argument 'points'"}
+{"date": "3/16/2024", "time": "6:13:8", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "6:13:10", "status": "FAILURE", "verbosity": "INFO", "message": "'int' object is not iterable"}
+{"date": "3/16/2024", "time": "6:16:19", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars Pruning"}
+{"date": "3/16/2024", "time": "6:16:20", "status": "FAILURE", "verbosity": "INFO", "message": "'int' object has no attribute 'grad_fn'"}

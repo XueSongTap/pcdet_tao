@@ -1,0 +1,13 @@
+{"date": "3/17/2024", "time": "14:11:48", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/17/2024", "time": "14:11:49", "status": "FAILURE", "verbosity": "INFO", "message": "shape mismatch: value tensor of shape [58, 4328] cannot be broadcast to indexing result of shape [64, 4328]"}
+{"date": "3/17/2024", "time": "14:15:16", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/17/2024", "time": "14:15:17", "status": "FAILURE", "verbosity": "INFO", "message": "shape mismatch: value tensor of shape [58, 4328] cannot be broadcast to indexing result of shape [64, 4328]"}
+{"date": "3/17/2024", "time": "14:22:44", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/17/2024", "time": "14:22:45", "status": "FAILURE", "verbosity": "INFO", "message": "shape mismatch: value tensor of shape [58, 4328] cannot be broadcast to indexing result of shape [64, 4328]"}
+{"date": "3/17/2024", "time": "14:23:6", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/17/2024", "time": "14:23:7", "status": "FAILURE", "verbosity": "INFO", "message": "shape mismatch: value tensor of shape [58, 4328] cannot be broadcast to indexing result of shape [64, 4328]"}
+{"date": "3/17/2024", "time": "14:23:20", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/17/2024", "time": "14:26:23", "status": "RUNNING", "verbosity": "INFO", "message": "Evaluation metrics generated.", "kpi": {"recall/roi_0.3": 0.0, "recall/rcnn_0.3": 0.8270304134867297, "recall/roi_0.5": 0.0, "recall/rcnn_0.5": 0.6364620116186354, "recall/roi_0.7": 0.0, "recall/rcnn_0.7": 0.17792459277822076, "bev mAP": 46.348439550166944, "3d mAP": 37.94241582981951}}
+{"date": "3/17/2024", "time": "14:26:23", "status": "SUCCESS", "verbosity": "INFO", "message": "Evaluation finished successfully.", "kpi": {"recall/roi_0.3": 0.0, "recall/rcnn_0.3": 0.8270304134867297, "recall/roi_0.5": 0.0, "recall/rcnn_0.5": 0.6364620116186354, "recall/roi_0.7": 0.0, "recall/rcnn_0.7": 0.17792459277822076, "bev mAP": 46.348439550166944, "3d mAP": 37.94241582981951}}
+{"date": "3/17/2024", "time": "14:31:42", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/17/2024", "time": "14:31:43", "status": "FAILURE", "verbosity": "INFO", "message": "shape mismatch: value tensor of shape [58, 4328] cannot be broadcast to indexing result of shape [64, 4328]"}

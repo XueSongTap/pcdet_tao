@@ -1,0 +1,29 @@
+2024-03-07 08:21:48,473   INFO  **********************Start logging**********************
+2024-03-07 08:21:48,473   INFO  CUDA_VISIBLE_DEVICES=ALL
+2024-03-07 08:21:48,768   INFO  Loading point cloud dataset
+2024-03-07 08:21:48,847   INFO  Total samples for point cloud dataset: 3769
+2024-03-07 08:21:48,965   INFO  ===========================Total trainable parameters: 4767703
+2024-03-07 08:21:48,965   INFO  *************** EPOCH 0 EVALUATION *****************
+2024-03-07 08:23:16,571   INFO  *************** Performance of EPOCH 0 *****************
+2024-03-07 08:23:16,571   INFO  Generate label finished(sec_per_example: 0.0232 second).
+2024-03-07 08:23:16,571   INFO  recall_roi_0.3: 0.000000
+2024-03-07 08:23:16,571   INFO  recall_rcnn_0.3: 0.931029
+2024-03-07 08:23:16,572   INFO  recall_roi_0.5: 0.000000
+2024-03-07 08:23:16,572   INFO  recall_rcnn_0.5: 0.856248
+2024-03-07 08:23:16,572   INFO  recall_roi_0.7: 0.000000
+2024-03-07 08:23:16,572   INFO  recall_rcnn_0.7: 0.526085
+2024-03-07 08:23:16,573   INFO  Average predicted number of objects(3769 samples): 17.712
+2024-03-07 08:23:59,472   INFO  Car AP@0.50, 0.50:
+bev  AP:86.1137
+3d   AP:84.5321
+Pedestrian AP@0.50, 0.50:
+bev  AP:46.3928
+3d   AP:38.2564
+Cyclist AP@0.50, 0.50:
+bev  AP:56.0121
+3d   AP:51.6976
+bev mAP: 62.8395
+3d mAP: 58.1620
+
+2024-03-07 08:23:59,478   INFO  Result is save to /code2/openpcdet_from_tao/work_prune_l2_0.01/eval
+2024-03-07 08:23:59,478   INFO  ****************Evaluation done.*****************

@@ -1,0 +1,6 @@
+2024-03-17 14:23:06,712   INFO  **********************Start logging**********************
+2024-03-17 14:23:06,712   INFO  CUDA_VISIBLE_DEVICES=ALL
+2024-03-17 14:23:06,998   INFO  Loading point cloud dataset
+2024-03-17 14:23:07,056   INFO  Total samples for point cloud dataset: 3769
+2024-03-17 14:23:07,134   INFO  ===========================Total trainable parameters: 4001376
+2024-03-17 14:23:07,135   INFO  *************** EPOCH 0 EVALUATION *****************
