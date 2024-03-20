@@ -1,0 +1,6 @@
+{"date": "3/5/2024", "time": "12:34:16", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars inference"}
+{"date": "3/5/2024", "time": "13:4:31", "status": "SUCCESS", "verbosity": "INFO", "message": "Inference finished successfully."}
+{"date": "3/7/2024", "time": "7:16:21", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars inference"}
+{"date": "3/7/2024", "time": "7:49:12", "status": "SUCCESS", "verbosity": "INFO", "message": "Inference finished successfully."}
+{"date": "3/7/2024", "time": "9:4:17", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars inference"}
+{"date": "3/7/2024", "time": "9:34:37", "status": "SUCCESS", "verbosity": "INFO", "message": "Inference finished successfully."}
