@@ -1,0 +1,145 @@
+2024-03-07 06:52:20,039   INFO  **********************Start logging**********************
+2024-03-07 06:52:20,040   INFO  CUDA_VISIBLE_DEVICES=ALL
+2024-03-07 06:52:20,040   INFO  cfg_file         tools/cfgs/pointpillar_general.yaml
+2024-03-07 06:52:20,040   INFO  save_to_file     False
+2024-03-07 06:52:20,040   INFO  output_dir       work_prune_11_0.3
+2024-03-07 06:52:20,040   INFO  trt_engine       None
+2024-03-07 06:52:20,040   INFO  batch_size       1
+2024-03-07 06:52:20,040   INFO  workers          4
+2024-03-07 06:52:20,040   INFO  ckpt             /code2/openpcdet_from_tao/work_prune_11_0.3/pruned_0.3.pth
+2024-03-07 06:52:20,040   INFO  cfg.ROOT_DIR: /code2/openpcdet_from_tao
+2024-03-07 06:52:20,040   INFO  cfg.LOCAL_RANK: 0
+2024-03-07 06:52:20,040   INFO  
+cfg.dataset = edict()
+2024-03-07 06:52:20,040   INFO  cfg.dataset.class_names: ['Car', 'Pedestrian', 'Cyclist']
+2024-03-07 06:52:20,040   INFO  cfg.dataset.type: GeneralPCDataset
+2024-03-07 06:52:20,040   INFO  cfg.dataset.data_path: /data/kitti
+2024-03-07 06:52:20,040   INFO  
+cfg.dataset.data_split = edict()
+2024-03-07 06:52:20,040   INFO  cfg.dataset.data_split.train: train
+2024-03-07 06:52:20,040   INFO  cfg.dataset.data_split.test: val
+2024-03-07 06:52:20,040   INFO  
+cfg.dataset.info_path = edict()
+2024-03-07 06:52:20,040   INFO  cfg.dataset.info_path.train: ['infos_train.pkl']
+2024-03-07 06:52:20,040   INFO  cfg.dataset.info_path.test: ['infos_val.pkl']
+2024-03-07 06:52:20,040   INFO  cfg.dataset.balanced_resampling: False
+2024-03-07 06:52:20,040   INFO  
+cfg.dataset.point_feature_encoding = edict()
+2024-03-07 06:52:20,040   INFO  cfg.dataset.point_feature_encoding.encoding_type: absolute_coordinates_encoding
+2024-03-07 06:52:20,040   INFO  cfg.dataset.point_feature_encoding.used_feature_list: ['x', 'y', 'z', 'intensity']
+2024-03-07 06:52:20,040   INFO  cfg.dataset.point_feature_encoding.src_feature_list: ['x', 'y', 'z', 'intensity']
+2024-03-07 06:52:20,040   INFO  cfg.dataset.point_cloud_range: [0, -39.68, -3, 69.12, 39.68, 1]
+2024-03-07 06:52:20,040   INFO  
+cfg.dataset.data_augmentor = edict()
+2024-03-07 06:52:20,040   INFO  cfg.dataset.data_augmentor.disable_aug_list: ['placeholder']
+2024-03-07 06:52:20,041   INFO  cfg.dataset.data_augmentor.aug_config_list: [{'name': 'gt_sampling', 'db_info_path': ['dbinfos_train.pkl'], 'preface': {'filter_by_min_points': ['Car:5', 'Pedestrian:5', 'Cyclist:5']}, 'sample_groups': ['Car:15', 'Pedestrian:15', 'Cyclist:15'], 'num_point_features': 4, 'disable_with_fake_lidar': False, 'remove_extra_width': [0.0, 0.0, 0.0], 'limit_whole_scene': False}, {'name': 'random_world_flip', 'along_axis_list': ['x']}, {'name': 'random_world_rotation', 'world_rot_angle': [-0.78539816, 0.78539816]}, {'name': 'random_world_scaling', 'world_scale_range': [0.95, 1.05]}]
+2024-03-07 06:52:20,041   INFO  cfg.dataset.data_processor: [{'name': 'mask_points_and_boxes_outside_range', 'remove_outside_boxes': True}, {'name': 'shuffle_points', 'shuffle': {'train': True, 'test': False}}, {'name': 'transform_points_to_voxels', 'voxel_size': [0.16, 0.16, 4], 'max_points_per_voxel': 32, 'max_number_of_voxels': {'train': 16000, 'test': 10000}}]
+2024-03-07 06:52:20,041   INFO  cfg.dataset.num_workers: 4
+2024-03-07 06:52:20,041   INFO  
+cfg.model = edict()
+2024-03-07 06:52:20,041   INFO  cfg.model.name: PointPillar
+2024-03-07 06:52:20,041   INFO  cfg.model.pretrained_model_path: None
+2024-03-07 06:52:20,041   INFO  
+cfg.model.vfe = edict()
+2024-03-07 06:52:20,041   INFO  cfg.model.vfe.name: PillarVFE
+2024-03-07 06:52:20,041   INFO  cfg.model.vfe.with_distance: False
+2024-03-07 06:52:20,041   INFO  cfg.model.vfe.use_absolue_xyz: True
+2024-03-07 06:52:20,041   INFO  cfg.model.vfe.use_norm: True
+2024-03-07 06:52:20,041   INFO  cfg.model.vfe.num_filters: [64]
+2024-03-07 06:52:20,041   INFO  
+cfg.model.map_to_bev = edict()
+2024-03-07 06:52:20,041   INFO  cfg.model.map_to_bev.name: PointPillarScatter
+2024-03-07 06:52:20,041   INFO  cfg.model.map_to_bev.num_bev_features: 64
+2024-03-07 06:52:20,041   INFO  
+cfg.model.backbone_2d = edict()
+2024-03-07 06:52:20,041   INFO  cfg.model.backbone_2d.name: BaseBEVBackbone
+2024-03-07 06:52:20,041   INFO  cfg.model.backbone_2d.layer_nums: [3, 5, 5]
+2024-03-07 06:52:20,041   INFO  cfg.model.backbone_2d.layer_strides: [2, 2, 2]
+2024-03-07 06:52:20,041   INFO  cfg.model.backbone_2d.num_filters: [64, 128, 256]
+2024-03-07 06:52:20,041   INFO  cfg.model.backbone_2d.upsample_strides: [1, 2, 4]
+2024-03-07 06:52:20,041   INFO  cfg.model.backbone_2d.num_upsample_filters: [128, 128, 128]
+2024-03-07 06:52:20,041   INFO  
+cfg.model.dense_head = edict()
+2024-03-07 06:52:20,041   INFO  cfg.model.dense_head.name: AnchorHeadSingle
+2024-03-07 06:52:20,041   INFO  cfg.model.dense_head.class_agnostic: False
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.use_direction_classifier: True
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.dir_offset: 0.78539
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.dir_limit_offset: 0.0
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.num_dir_bins: 2
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.anchor_generator_config: [{'class_name': 'Car', 'anchor_sizes': [[3.9, 1.6, 1.56]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [-1.78], 'align_center': False, 'feature_map_stride': 2, 'matched_threshold': 0.6, 'unmatched_threshold': 0.45}, {'class_name': 'Pedestrian', 'anchor_sizes': [[0.8, 0.6, 1.73]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [-0.6], 'align_center': False, 'feature_map_stride': 2, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}, {'class_name': 'Cyclist', 'anchor_sizes': [[1.76, 0.6, 1.73]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [-0.6], 'align_center': False, 'feature_map_stride': 2, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}]
+2024-03-07 06:52:20,042   INFO  
+cfg.model.dense_head.target_assigner_config = edict()
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.target_assigner_config.name: AxisAlignedTargetAssigner
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.target_assigner_config.pos_fraction: -1.0
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.target_assigner_config.sample_size: 512
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.target_assigner_config.norm_by_num_examples: False
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.target_assigner_config.match_height: False
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.target_assigner_config.box_coder: ResidualCoder
+2024-03-07 06:52:20,042   INFO  
+cfg.model.dense_head.loss_config = edict()
+2024-03-07 06:52:20,042   INFO  
+cfg.model.dense_head.loss_config.loss_weights = edict()
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.loss_config.loss_weights.cls_weight: 1.0
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.loss_config.loss_weights.loc_weight: 2.0
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.loss_config.loss_weights.dir_weight: 0.2
+2024-03-07 06:52:20,042   INFO  cfg.model.dense_head.loss_config.loss_weights.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2024-03-07 06:52:20,042   INFO  
+cfg.model.post_processing = edict()
+2024-03-07 06:52:20,042   INFO  cfg.model.post_processing.recall_thresh_list: [0.3, 0.5, 0.7]
+2024-03-07 06:52:20,042   INFO  cfg.model.post_processing.score_thresh: 0.1
+2024-03-07 06:52:20,042   INFO  cfg.model.post_processing.output_raw_score: False
+2024-03-07 06:52:20,042   INFO  cfg.model.post_processing.eval_metric: kitti
+2024-03-07 06:52:20,042   INFO  
+cfg.model.post_processing.nms_config = edict()
+2024-03-07 06:52:20,043   INFO  cfg.model.post_processing.nms_config.multi_classes_nms: False
+2024-03-07 06:52:20,043   INFO  cfg.model.post_processing.nms_config.nms_type: nms_gpu
+2024-03-07 06:52:20,043   INFO  cfg.model.post_processing.nms_config.nms_thresh: 0.01
+2024-03-07 06:52:20,043   INFO  cfg.model.post_processing.nms_config.nms_pre_max_size: 4096
+2024-03-07 06:52:20,043   INFO  cfg.model.post_processing.nms_config.nms_post_max_size: 500
+2024-03-07 06:52:20,043   INFO  cfg.model.sync_bn: False
+2024-03-07 06:52:20,043   INFO  
+cfg.train = edict()
+2024-03-07 06:52:20,043   INFO  cfg.train.batch_size: 7
+2024-03-07 06:52:20,043   INFO  cfg.train.num_epochs: 80
+2024-03-07 06:52:20,043   INFO  cfg.train.optimizer: adam_onecycle
+2024-03-07 06:52:20,043   INFO  cfg.train.lr: 0.003
+2024-03-07 06:52:20,043   INFO  cfg.train.weight_decay: 0.01
+2024-03-07 06:52:20,043   INFO  cfg.train.momentum: 0.9
+2024-03-07 06:52:20,043   INFO  cfg.train.moms: [0.95, 0.85]
+2024-03-07 06:52:20,043   INFO  cfg.train.pct_start: 0.4
+2024-03-07 06:52:20,043   INFO  cfg.train.div_factor: 10
+2024-03-07 06:52:20,043   INFO  cfg.train.decay_step_list: [35, 45]
+2024-03-07 06:52:20,043   INFO  cfg.train.lr_decay: 0.1
+2024-03-07 06:52:20,043   INFO  cfg.train.lr_clip: 1e-07
+2024-03-07 06:52:20,043   INFO  cfg.train.lr_warmup: False
+2024-03-07 06:52:20,043   INFO  cfg.train.warmup_epoch: 1
+2024-03-07 06:52:20,043   INFO  cfg.train.grad_norm_clip: 10
+2024-03-07 06:52:20,043   INFO  cfg.train.resume_training_checkpoint_path: None
+2024-03-07 06:52:20,043   INFO  cfg.train.pruned_model_path: /code2/openpcdet_from_tao/work_prune_random_0.1/pruned_0.1.pth
+2024-03-07 06:52:20,043   INFO  cfg.train.tcp_port: 18888
+2024-03-07 06:52:20,043   INFO  cfg.train.random_seed: None
+2024-03-07 06:52:20,044   INFO  cfg.train.checkpoint_interval: 1
+2024-03-07 06:52:20,044   INFO  cfg.train.max_checkpoint_save_num: 30
+2024-03-07 06:52:20,044   INFO  cfg.train.merge_all_iters_to_one_epoch: False
+2024-03-07 06:52:20,044   INFO  
+cfg.inference = edict()
+2024-03-07 06:52:20,044   INFO  cfg.inference.max_points_num: 25000
+2024-03-07 06:52:20,044   INFO  cfg.inference.batch_size: 1
+2024-03-07 06:52:20,044   INFO  cfg.inference.checkpoint: /code2/openpcdet_from_tao/work_prune_11_0.3/pruned_0.3.pth
+2024-03-07 06:52:20,044   INFO  cfg.inference.viz_conf_thresh: 0.1
+2024-03-07 06:52:20,044   INFO  
+cfg.export = edict()
+2024-03-07 06:52:20,044   INFO  cfg.export.gpu_id: 0
+2024-03-07 06:52:20,044   INFO  cfg.export.checkpoint: /code2/openpcdet_from_tao/work_retrain_random_0.07/checkpoint_epoch_80.pth
+2024-03-07 06:52:20,044   INFO  cfg.export.onnx_file: /code2/openpcdet_from_tao/work_retrain_random_0.07/checkpoint_epoch_80.pth.onnx
+2024-03-07 06:52:20,044   INFO  
+cfg.prune = edict()
+2024-03-07 06:52:20,044   INFO  cfg.prune.model: /code2/openpcdet_from_tao/work_dir_3/checkpoint_epoch_80.pth
+2024-03-07 06:52:20,044   INFO  cfg.results_dir: None
+2024-03-07 06:52:20,044   INFO  cfg.class_names: ['Car', 'Pedestrian', 'Cyclist']
+2024-03-07 06:52:20,335   INFO  Loading point cloud dataset
+2024-03-07 06:52:20,393   INFO  Total samples for point cloud dataset: 3769
+2024-03-07 07:24:05,557   INFO  Result is save to /code2/openpcdet_from_tao/work_prune_11_0.3/infer
+2024-03-07 07:24:05,557   INFO  ****************Inference done.*****************
+2024-03-07 07:24:05,567   INFO  Inference time: 1905.1090235710144 seconds
+2024-03-07 07:24:05,567   INFO  Peak GPU memory usage: 312.80615234375 MB
