@@ -1,0 +1,4 @@
+2024-03-04 13:46:16,865   INFO  **********************Start logging**********************
+2024-03-04 13:46:16,865   INFO  CUDA_VISIBLE_DEVICES=ALL
+2024-03-04 13:46:17,169   INFO  Loading point cloud dataset
+2024-03-04 13:46:17,225   INFO  Total samples for point cloud dataset: 3769
