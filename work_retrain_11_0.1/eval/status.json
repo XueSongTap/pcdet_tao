@@ -1,0 +1,2 @@
+{"date": "3/9/2024", "time": "3:34:8", "status": "STARTED", "verbosity": "INFO", "message": "Starting PointPillars evaluation"}
+{"date": "3/9/2024", "time": "3:34:8", "status": "FAILURE", "verbosity": "INFO", "message": "[Errno 2] No such file or directory: '/code2/openpcdet_from_tao/work_retrain_11_0.1/checkpoint_epoch_80.pth'"}
